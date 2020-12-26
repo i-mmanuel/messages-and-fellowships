@@ -1,0 +1,35 @@
+{
+  "name": "vynchronize",
+  "version": "1.0.0",
+  "description": "Video synchronization app",
+  "main": "server.js",
+  "engines": {
+    "node": "12.18.4",
+    "npm": "6.14.6"
+  },
+  "scripts": {
+    "test": "jshint test.js",
+    "dev": "nodemon server"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kyle8998/Vynchronize.git"
+  },
+  "author": "Kyle Lim",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "8.1.0",
+    "express": "*",
+    "lodash": "^4.17.13",
+    "nodemon": "^2.0.6",
+    "socket.io": "*",
+    "ws": ">=3.3.1"
+  },
+  "bugs": {
+    "url": "https://github.com/kyle8998/Vynchronize/issues"
+  },
+  "homepage": "https://github.com/kyle8998/Vynchronize#readme",
+  "devDependencies": {
+    "jshint": "^2.9.5"
+  }
+}
