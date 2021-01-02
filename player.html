@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" href="https://cdn.plyr.io/2.0.15/plyr.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="/assets/css/seachBar.css" />
+    <title>Messages with Fellowship</title>
+  </head>
+
+  <body>
+    <div
+      class=""
+      style="background: rgba(211, 0, 28, 0.8); backdrop-filter: blur(8px)"
+    >
+      <nav
+        class="ui container secondary menu animate__animated animate__slideInDown"
+      >
+        <aside>
+          <a href="/">
+            <img
+              src="assets/images/logo.png"
+              class="ui middle aligned tiny image"
+              alt="Pleased"
+            />
+          </a>
+        </aside>
+        <aside class="right menu">
+          <a class="ui item" id="sign-in">Sign in</a>
+
+          <!-- Search bar -->
+          <!-- <form
+            id="search-bar"
+            class="ui search fluid item"
+            action=""
+            onsubmit="event.preventDefault()"
+          >
+            <input type="search" class="prompt" />
+            <i class="search icon"></i>
+            <div class="results"></div>
+          </form> -->
+        </aside>
+      </nav>
+    </div>
+
+    <!-- Backdrop video -->
+
+    <!-- Main section of videos -->
+    <section class="ui container" style="position: relative; top: 10em">
+      <div
+        id="plyr-youtube"
+        data-type="youtube"
+        data-video-id="TbsvRyYpcOQ"
+      ></div>
+
+      <div id="divider" class="ui horizontal divider header" style="">
+        <i class="play icon"></i>
+      </div>
+
+      <!-- Navigation buttons -->
+      <button id="watch-party" class="ui olive right floated button">
+        Add friends
+        <i class="angle double right icon"></i>
+      </button>
+      <button onclick="history.back()" class="ui yellow left floated button">
+        <i class="angle double left icon"></i>
+        Back to videos
+      </button>
+    </section>
+
+    <!-- Scripts -->
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.plyr.io/2.0.15/plyr.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+
+    <script type="text/javascript">
+      // Fetch clicked video from local storage.
+      const video = JSON.parse(localStorage.getItem('video')) || '';
+      document
+        .querySelector('#plyr-youtube')
+        .setAttribute('data-video-id', video.id.videoId);
+
+      // Setup video player
+      plyr.setup('#plyr-youtube');
+
+      // Set title of video.
+      document.querySelector(
+        '#divider'
+      ).innerHTML = `<i class="play icon"></i> ${video.snippet.title}`;
+
+      // Watch video function.
+      const watchVideo = (videoId) => {
+        let meetingID = Math.random().toString(36).substr(2, 12);
+
+        let visit = `/watch/${meetingID}?url=https://www.youtube.com/watch?v=${videoId}`;
+        window.open(visit, '_self');
+      };
+
+      // Click to watch with friends.
+      document
+        .querySelector('#watch-party')
+        .addEventListener('click', () => watchVideo(video.id.videoId));
+    </script>
+  </body>
+</html>

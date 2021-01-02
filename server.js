@@ -37,6 +37,10 @@ app.get('/watch/:room', function (req, res) {
   res.sendFile(__dirname + '/watch.html');
 });
 
+app.get('/play', (request, response) => {
+  response.sendFile(__dirname + '/player.html');
+});
+
 //var roomno = 1;
 /*
 io.on('connection', function(socket) {
@@ -182,7 +186,7 @@ io.sockets.on('connection', function (socket) {
       io.sockets.adapter.rooms['room-' + socket.roomnum].currPlayer = 0;
       // Default video
       io.sockets.adapter.rooms['room-' + socket.roomnum].currVideo = {
-        yt: 'M7lc1UVf-VE',
+        yt: 'QUNMyTnw0o4',
         dm: 'x26m1j4',
         vimeo: '76979871',
         html5:
@@ -191,7 +195,7 @@ io.sockets.on('connection', function (socket) {
       // Previous Video
       io.sockets.adapter.rooms['room-' + socket.roomnum].prevVideo = {
         yt: {
-          id: 'M7lc1UVf-VE',
+          id: 'QUNMyTnw0o4',
           time: 0,
         },
         dm: {
