@@ -7,9 +7,14 @@ body {
   background-color: #f8f4eb;
 }
 
-#try-it {
+#try-it,
+#sign-in {
   border-radius: 5px;
   border: 1px solid white;
+}
+
+#try-it {
+  background-color: #10d174;
 }
 
 #sign-in,
