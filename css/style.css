@@ -182,7 +182,7 @@
  }
 
  .chat {
-     width: 500px;
+     /*! width: 500px; */
      height: 300px;
      overflow: scroll;
      border: 1px solid gray;
@@ -193,15 +193,13 @@
  }
 
  .chat-form {
-     width: 500px;
+     /*! width: 500px; */
  }
 
  .online-users {
      padding: 5px !important;
-     float: right;
      /* padding-right: 11em; */
      height: 140px;
-     width: 270px;
      overflow: scroll;
  }
 
@@ -217,7 +215,7 @@
 
  .noscrollbar {
      /* These rules create an artificially confined space, so we get
-     a scrollbar that we can hide. They are not part of the hiding itself. */
+     a scrollbar that we can hide. They are not part of the hidinhvjg itself. */
      /* border: 1px dashed gray;
   padding: .5em; */
      /* white-space: pre-wrap; */
@@ -361,7 +359,7 @@
      position: absolute;
      background: #777;
      padding: 15px;
-     right: -25px;
+     right: 30px;
      top: -130px;
      z-index: 100;
      cursor: pointer;

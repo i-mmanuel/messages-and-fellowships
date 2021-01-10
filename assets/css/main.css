@@ -7,7 +7,7 @@ body {
   background-color: #f8f4eb;
 }
 
-#sign-in {
+#try-it {
   border-radius: 5px;
   border: 1px solid white;
 }
@@ -35,7 +35,7 @@ video.video {
   filter: blur(5px);
 }
 
-#hero-text {
+.hero-text {
   top: -50%;
   font-weight: 700;
   font-size: 2em;
@@ -63,6 +63,11 @@ main {
 main > h2 {
   text-align: center;
   margin-bottom: 2em;
+  font-size: 1em;
+}
+
+#divider {
+  margin: 2.5em 0 !important;
 }
 
 @media only screen and (max-width: 600px) {

@@ -16,17 +16,19 @@
     />
     <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
     <link rel="stylesheet" type="text/css" href="assets/css/seachBar.css" />
+
+    <!-- AOS cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
     <title>Messages with Fellowship</title>
   </head>
 
   <body>
     <div
-      class=""
+      class="ui secondary menu animate__animated animate__slideInDown"
       style="background: rgba(211, 0, 28, 0.5); backdrop-filter: blur(8px)"
     >
-      <nav
-        class="ui container secondary menu animate__animated animate__slideInDown"
-      ></nav>
+      <nav class="ui container">
         <aside>
           <img
             src="assets/images/logo.png"
@@ -35,6 +37,7 @@
           />
         </aside>
         <aside class="right menu">
+          <a class="ui item" id="try-it" href="/dhm">Our Prophet</a>
           <a class="ui item" id="sign-in">Sign in</a>
 
           <!-- Search bar -->
@@ -63,7 +66,7 @@
           alt="HTML5 background video"
         />
       </video>
-      <h1 id="hero-text" class="animate__animated animate__wobble">
+      <h1 class="hero-text" class="animate__animated animate__wobble">
         Watch messages with
         <span class="highlight">friends!</span>
       </h1>
@@ -71,8 +74,15 @@
 
     <!-- Main section of videos -->
     <main>
-      <h2>LATEST VIDEOS</h2>
+      <div id="divider" class="ui horizontal divider header">Latest videos</div>
 
+      <div class="ui container">
+        <a href="/" id="recent-video" class="ui fluid image">
+          <img id="hero-image" src="/images/wireframe/image-text.png" />
+        </a>
+      </div>
+
+      <div id="divider" class="ui horizontal divider header">Other videos</div>
       <div class="ui special link four stackable cards container"></div>
     </main>
     <script
@@ -91,5 +101,13 @@
       crossorigin="anonymous"
     ></script>
     <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      fetchYoutubeVideos('UCIYYahj78ZKudTI5HzFhTeg');
+
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
   </body>
 </html>

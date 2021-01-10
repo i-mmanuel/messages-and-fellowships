@@ -1,9 +1,9 @@
 // Fetch YouTube videos.
 // Future refactor. Save video to local storage,
 // And fetch from there instead.
-const fetchYoutubeVideos = () =>
+const fetchYoutubeVideos = (channel) =>
   fetch(
-    'https://www.googleapis.com/youtube/v3/search?key=AIzaSyCGxjuEYdoY-8RO6OVJ9RWRDuSkJwPI5to&channelId=UCIYYahj78ZKudTI5HzFhTeg&part=snippet,id&maxResults=50&order=date'
+    `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAkMToKFSxMsiBnCM5cIRPXdZK-8n0jsls&channelId=${channel}&part=snippet,id&maxResults=50&order=date`
   )
     .then((response) => response.json())
     .then((data) => {
@@ -38,13 +38,20 @@ const watchVideo = (videoId) => {
 };
 
 const displayVideos = (videos) => {
+  // Recent video details.
+  const recentVid = videos[0];
+  document.querySelector('#hero-image').src =
+    recentVid.snippet.thumbnails.high.url;
+  document.querySelector('#recent-video').href = '/play';
+  localStorage.setItem('video', JSON.stringify(recentVid));
+
   videos.map((video) => {
     // Create video card
     let card = document.createElement('div');
-    card.classList.add('card');
+    card.classList.add('card', 'link', 'raised');
     card.style.fontFamily = "'Nunito', sans-serif";
     card.innerHTML = `
-      <div class='image blurring dimmable'>
+      <div data-aos='fade-up' class='image blurring dimmable'>
         <div class='ui dimmer'>
           <div class='content'>
             <div class='center'>
@@ -81,8 +88,3 @@ const displayVideos = (videos) => {
     });
   });
 };
-
-//
-
-// Fetch Youtube videos.
-fetchYoutubeVideos();

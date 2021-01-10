@@ -65,16 +65,22 @@
         data-video-id="TbsvRyYpcOQ"
       ></div>
 
-      <div id="divider" class="ui horizontal divider header" style="">
+      <div id="divider" class="ui horizontal divider header">
         <i class="play icon"></i>
       </div>
 
       <!-- Navigation buttons -->
-      <button id="watch-party" class="ui olive right floated button">
+      <button
+        id="watch-party"
+        class="ui olive right floated button animate__animated animate__slideInLeft"
+      >
         Add friends
         <i class="angle double right icon"></i>
       </button>
-      <button onclick="history.back()" class="ui yellow left floated button">
+      <button
+        onclick="history.back()"
+        class="ui yellow left floated button animate__animated animate__slideInRight"
+      >
         <i class="angle double left icon"></i>
         Back to videos
       </button>
@@ -117,7 +123,7 @@
       const watchVideo = (videoId) => {
         let meetingID = Math.random().toString(36).substr(2, 12);
 
-        let visit = `/watch/${meetingID}?url=https://www.youtube.com/watch?v=${videoId}`;
+        let visit = `/watch/${meetingID}?url=${videoId}`;
         window.open(visit, '_self');
       };
 

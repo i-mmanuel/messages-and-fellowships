@@ -11,10 +11,6 @@
     "test": "jshint test.js",
     "dev": "nodemon server"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kyle8998/Vynchronize.git"
-  },
   "author": "Kyle Lim",
   "license": "ISC",
   "dependencies": {
@@ -25,10 +21,6 @@
     "socket.io": "*",
     "ws": ">=3.3.1"
   },
-  "bugs": {
-    "url": "https://github.com/kyle8998/Vynchronize/issues"
-  },
-  "homepage": "https://github.com/kyle8998/Vynchronize#readme",
   "devDependencies": {
     "jshint": "^2.9.5"
   }

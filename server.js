@@ -41,6 +41,10 @@ app.get('/play', (request, response) => {
   response.sendFile(__dirname + '/player.html');
 });
 
+app.get('/dhm', (request, response) => {
+  response.sendFile(__dirname + '/dhm.html');
+});
+
 //var roomno = 1;
 /*
 io.on('connection', function(socket) {

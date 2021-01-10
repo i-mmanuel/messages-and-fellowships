@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/png" href="/favicon.ico" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.css"
+      integrity="sha512-8bHTC73gkZ7rZ7vpqUQThUDhqcNFyYi2xgDgPDHc+GXVGHXq+xPjynxIopALmOPqzo9JZj0k6OqqewdGO3EsrQ=="
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"
+    />
+    <link rel="stylesheet" type="text/css" href="assets/css/main.css" />
+    <link rel="stylesheet" type="text/css" href="assets/css/seachBar.css" />
+
+    <!-- AOS cdn -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+
+    <title>Messages with Fellowship</title>
+  </head>
+
+  <body>
+    <div
+      class="ui secondary menu animate__animated animate__slideInDown"
+      style="background: rgba(211, 0, 28, 0.5); backdrop-filter: blur(8px)"
+    >
+      <nav class="ui container">
+        <aside>
+          <img
+            src="assets/images/logo.png"
+            class="ui middle aligned tiny image"
+            alt="Pleased"
+          />
+        </aside>
+        <aside class="right menu">
+          <a class="ui item" id="sign-in">Sign in</a>
+
+          <!-- Search bar -->
+          <form
+            id="search-bar"
+            class="ui search fluid item"
+            action=""
+            onsubmit="event.preventDefault()"
+          >
+            <input type="search" autofocus class="prompt" />
+            <i class="search icon"></i>
+            <div class="results"></div>
+          </form>
+        </aside>
+      </nav>
+    </div>
+
+    <!-- Backdrop video -->
+    <div class="hero-video">
+      <video autoplay loop muted class="video" id="video">
+        <!--this id is only used for the toggle function; can be removed if you don't need an event -->
+        <!-- whatever video you put here will be (effectively) cropped to fit container size; make sure you're okay with it shrinking to the top left corner of the video at your specified minimum dimensions -->
+        <source src="assets/videos/vid1.mp4" alt="HTML5 background video" />
+      </video>
+      <h1 class="hero-text" class="animate__animated animate__wobble">
+        Watch messages with
+        <span class="highlight">friends!</span>
+      </h1>
+    </div>
+
+    <!-- Main section of videos -->
+    <main>
+      <div id="divider" class="ui horizontal divider header">Latest Videos</div>
+      <div class="ui container">
+        <a href="/" id="recent-video" class="ui fluid image">
+          <img id="hero-image" src="/images/wireframe/image-text.png" />
+        </a>
+      </div>
+
+      <div id="divider" class="ui horizontal divider header">Other videos</div>
+
+      <div class="ui special link four stackable cards container"></div>
+    </main>
+
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"
+      integrity="sha512-bLT0Qm9VnAYZDflyKcBaQ2gg0hSYNQrJ8RilYldYQ1FxQYoCLtUjuuRuZo+fjqhx/qtq/1itJ0C2ejDxltZVFg=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/semantic-ui/2.4.1/semantic.min.js"
+      integrity="sha512-dqw6X88iGgZlTsONxZK9ePmJEFrmHwpuMrsUChjAw1mRUhUITE5QU9pkcSox+ynfLhL15Sv2al5A0LVyDCmtUw=="
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script type="text/javascript" src="/assets/js/main.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      fetchYoutubeVideos('UCfdKLAi03_86ZXcNYQaQXmg');
+
+      AOS.init({
+        duration: 1200,
+      });
+    </script>
+  </body>
+</html>
