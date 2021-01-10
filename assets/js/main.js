@@ -3,7 +3,7 @@
 // And fetch from there instead.
 const fetchYoutubeVideos = (channel) =>
   fetch(
-    `https://www.googleapis.com/youtube/v3/search?key=AIzaSyAkMToKFSxMsiBnCM5cIRPXdZK-8n0jsls&channelId=${channel}&part=snippet,id&maxResults=50&order=date`
+    `https://www.googleapis.com/youtube/v3/search?key=AIzaSyCGxjuEYdoY-8RO6OVJ9RWRDuSkJwPI5to&channelId=${channel}&part=snippet,id&maxResults=50&order=date`
   )
     .then((response) => response.json())
     .then((data) => {

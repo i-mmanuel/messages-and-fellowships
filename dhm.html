@@ -26,15 +26,22 @@
   <body>
     <div
       class="ui secondary menu animate__animated animate__slideInDown"
-      style="background: rgba(211, 0, 28, 0.5); backdrop-filter: blur(8px)"
+      style="
+        background: rgba(211, 0, 28, 0.5);
+        backdrop-filter: blur(8px);
+        padding-left: 0.5em;
+        padding-right: 0.5em;
+      "
     >
       <nav class="ui container">
         <aside>
-          <img
-            src="assets/images/logo.png"
-            class="ui middle aligned tiny image"
-            alt="Pleased"
-          />
+          <a href="/">
+            <img
+              src="assets/images/logo.png"
+              class="ui middle aligned tiny image"
+              alt="Pleased"
+            />
+          </a>
         </aside>
         <aside class="right menu">
           <a class="ui item" id="sign-in">Sign in</a>
@@ -59,7 +66,7 @@
       <video autoplay loop muted class="video" id="video">
         <!--this id is only used for the toggle function; can be removed if you don't need an event -->
         <!-- whatever video you put here will be (effectively) cropped to fit container size; make sure you're okay with it shrinking to the top left corner of the video at your specified minimum dimensions -->
-        <source src="assets/videos/vid1.mp4" alt="HTML5 background video" />
+        <source src="assets/videos/vid2.mp4" alt="HTML5 background video" />
       </video>
       <h1 class="hero-text" class="animate__animated animate__wobble">
         Watch messages with
