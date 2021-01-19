@@ -226,7 +226,9 @@
             <!----------------------------------- PLAYER AREA ----------------------------------->
 
             <div id="playerArea" style="text-align: center">
-              <div class="video" id="player"></div>
+              <div id="vid-id">
+                <div class="video" id="player"></div>
+              </div>
               <!-- <iframe class="video" id="player" allowfullscreen="0" rel="0" width="640" height="360" src="https://www.youtube.com/embed/M7lc1UVf-VE?enablejsapi=1" frameborder="1" style="border: solid 4px #37474F"></iframe> -->
             </div>
             <div id="dailyArea">
@@ -999,6 +1001,27 @@
           .toString(36)
           .substr(2, 12);
       }
+
+      (function ($) {
+        var $window = $('#Home');
+        var $videoWrap = $('div#playerArea');
+        var $video = $('#vid-id');
+        var videoHeight = $video.outerHeight();
+
+        $window.on('scroll', function () {
+          var windowScrollTop = $window.scrollTop();
+          var videoBottom = videoHeight + $videoWrap.offset().top;
+
+          if (windowScrollTop > videoBottom) {
+            $videoWrap.height(videoHeight);
+            $video.addClass('stuck');
+          } else {
+            $videoWrap.height('auto');
+            $video.removeClass('stuck');
+          }
+        });
+        console.log('called, yes');
+      })(jQuery);
     </script>
 
     <!-- Bootstrap core JavaScript -->
